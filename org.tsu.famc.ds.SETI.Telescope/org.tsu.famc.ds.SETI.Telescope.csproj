@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E7336C62-05B2-4AA6-BFED-1EB77C1EEFE5}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{2D70B272-6418-406C-ADE8-55BF2AE20ED1}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>org.tsu.famc.ds.SETI</RootNamespace>
-    <AssemblyName>org.tsu.famc.ds.SETI</AssemblyName>
+    <RootNamespace>org.tsu.famc.ds.SETI.Telescope</RootNamespace>
+    <AssemblyName>org.tsu.famc.ds.SETI.Telescope</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,16 +35,52 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="org\tsu\famc\SETI\ISETI.cs" />
+    <Compile Include="org\tsu\famc\SETI\Telescope.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\Proxy\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\org.tsu.famc.ds.SETI.Target\org.tsu.famc.ds.SETI.Target.csproj">
-      <Project>{f19542a8-19ca-410c-9607-97eedb7b5240}</Project>
-      <Name>org.tsu.famc.ds.SETI.Target</Name>
-    </ProjectReference>
+    <None Include="App.config" />
+    <None Include="Service References\Proxy\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\Receiver.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Proxy\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxy\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxy\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxy\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxy\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

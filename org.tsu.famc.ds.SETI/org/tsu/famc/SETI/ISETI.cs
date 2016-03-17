@@ -1,13 +1,6 @@
 namespace org.tsu.famc.ds.SETI
 {
-    public enum Target
-    {
-        NewPlanet,
-        NewLife,
-        Aliens
-    };
-
-    public delegate void Notify();
+    public delegate void Notify(int [] data);  
 
     public interface ISETI
     {

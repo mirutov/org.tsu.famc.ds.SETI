@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E7336C62-05B2-4AA6-BFED-1EB77C1EEFE5}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{60525C57-FC83-4CA0-9F4F-5BB363CB2D66}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>org.tsu.famc.ds.SETI</RootNamespace>
-    <AssemblyName>org.tsu.famc.ds.SETI</AssemblyName>
+    <RootNamespace>org.tsu.famc.ds.SETI.Server</RootNamespace>
+    <AssemblyName>org.tsu.famc.ds.SETI.Server</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,19 +34,45 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="org\tsu\famc\SETI\ISETI.cs" />
+    <Compile Include="org\tsu\famc\SETI\Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\org.tsu.famc.ds.SETI.Target\org.tsu.famc.ds.SETI.Target.csproj">
-      <Project>{f19542a8-19ca-410c-9607-97eedb7b5240}</Project>
-      <Name>org.tsu.famc.ds.SETI.Target</Name>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\org.tsu.famc.ds.SETI.Alarm\org.tsu.famc.ds.SETI.Alarm.csproj">
+      <Project>{3dccbf2c-c620-49b9-a2de-ecc511d2790b}</Project>
+      <Name>org.tsu.famc.ds.SETI.Alarm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\org.tsu.famc.ds.SETI.DeepThought\org.tsu.famc.ds.SETI.DeepThought.csproj">
+      <Project>{e1f07685-564f-4cc9-b3d5-6a926127d8bf}</Project>
+      <Name>org.tsu.famc.ds.SETI.DeepThought</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\org.tsu.famc.ds.SETI.Facade\org.tsu.famc.ds.SETI.Facade.csproj">
+      <Project>{02646e52-20be-4429-974a-7c98916e335c}</Project>
+      <Name>org.tsu.famc.ds.SETI.Facade</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\org.tsu.famc.ds.SETI.Receiver\org.tsu.famc.ds.SETI.Receiver.csproj">
+      <Project>{5b7d00ad-9d2e-45ff-9db5-bb99c42cd17a}</Project>
+      <Name>org.tsu.famc.ds.SETI.Receiver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\org.tsu.famc.ds.SETI\org.tsu.famc.ds.SETI.csproj">
+      <Project>{e7336c62-05b2-4aa6-bfed-1eb77c1eefe5}</Project>
+      <Name>org.tsu.famc.ds.SETI</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="SETI.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(ProjectDir)\SETI.xml $(TargetDir)</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

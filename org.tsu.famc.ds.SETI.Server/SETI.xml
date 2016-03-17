@@ -1,0 +1,4 @@
+﻿<module name="SETI">
+  <bind service="org.tsu.famc.ds.SETI.ISETI, org.tsu.famc.ds.SETI"
+        to="org.tsu.famc.ds.SETI.DeepThought, org.tsu.famc.ds.SETI.DeepThought" scope="singleton" />
+</module>

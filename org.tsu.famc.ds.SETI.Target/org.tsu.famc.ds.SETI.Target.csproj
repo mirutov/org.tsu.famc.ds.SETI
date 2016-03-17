@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E7336C62-05B2-4AA6-BFED-1EB77C1EEFE5}</ProjectGuid>
+    <ProjectGuid>{F19542A8-19CA-410C-9607-97EEDB7B5240}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>org.tsu.famc.ds.SETI</RootNamespace>
-    <AssemblyName>org.tsu.famc.ds.SETI</AssemblyName>
+    <AssemblyName>org.tsu.famc.ds.SETI.Target</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -34,14 +34,8 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="org\tsu\famc\SETI\ISETI.cs" />
+    <Compile Include="org\tsu\famc\SETI\SETITarget.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\org.tsu.famc.ds.SETI.Target\org.tsu.famc.ds.SETI.Target.csproj">
-      <Project>{f19542a8-19ca-410c-9607-97eedb7b5240}</Project>
-      <Name>org.tsu.famc.ds.SETI.Target</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

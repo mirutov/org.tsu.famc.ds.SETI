@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E7336C62-05B2-4AA6-BFED-1EB77C1EEFE5}</ProjectGuid>
+    <ProjectGuid>{3DCCBF2C-C620-49B9-A2DE-ECC511D2790B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>org.tsu.famc.ds.SETI</RootNamespace>
-    <AssemblyName>org.tsu.famc.ds.SETI</AssemblyName>
+    <AssemblyName>org.tsu.famc.ds.SETI.Alarm</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,9 +32,10 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ServiceModel" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="org\tsu\famc\SETI\ISETI.cs" />
+    <Compile Include="org\tsu\famc\SETI\IAlarm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
