@@ -6,13 +6,13 @@ namespace org.tsu.famc.ds.SETI
                  CallbackContract = typeof(IAlarmCallback))]
     public interface IAlarm
     {
-        [OperationContract(IsOneWay = true)]
-        void Subscribe(Target target);
+        [OperationContract]
+        int Subscribe(Target target);
     }
 
     public interface IAlarmCallback
     {
-        [OperationContract(IsOneWay = true)]
+        [OperationContract]
         void Alarm(int[] data);
     }
 

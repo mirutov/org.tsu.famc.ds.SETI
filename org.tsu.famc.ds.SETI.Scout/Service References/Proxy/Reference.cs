@@ -30,17 +30,17 @@ namespace org.tsu.famc.ds.SETI.Scout.Proxy {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Proxy.IAlarm", CallbackContract=typeof(org.tsu.famc.ds.SETI.Scout.Proxy.IAlarmCallback), SessionMode=System.ServiceModel.SessionMode.Required)]
     public interface IAlarm {
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAlarm/Subscribe")]
-        void Subscribe(org.tsu.famc.ds.SETI.Scout.Proxy.Target target);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlarm/Subscribe", ReplyAction="http://tempuri.org/IAlarm/SubscribeResponse")]
+        int Subscribe(org.tsu.famc.ds.SETI.Scout.Proxy.Target target);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAlarm/Subscribe")]
-        System.Threading.Tasks.Task SubscribeAsync(org.tsu.famc.ds.SETI.Scout.Proxy.Target target);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlarm/Subscribe", ReplyAction="http://tempuri.org/IAlarm/SubscribeResponse")]
+        System.Threading.Tasks.Task<int> SubscribeAsync(org.tsu.famc.ds.SETI.Scout.Proxy.Target target);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IAlarmCallback {
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAlarm/Alarm")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlarm/Alarm", ReplyAction="http://tempuri.org/IAlarm/AlarmResponse")]
         void Alarm(int[] data);
     }
     
@@ -72,11 +72,11 @@ namespace org.tsu.famc.ds.SETI.Scout.Proxy {
                 base(callbackInstance, binding, remoteAddress) {
         }
         
-        public void Subscribe(org.tsu.famc.ds.SETI.Scout.Proxy.Target target) {
-            base.Channel.Subscribe(target);
+        public int Subscribe(org.tsu.famc.ds.SETI.Scout.Proxy.Target target) {
+            return base.Channel.Subscribe(target);
         }
         
-        public System.Threading.Tasks.Task SubscribeAsync(org.tsu.famc.ds.SETI.Scout.Proxy.Target target) {
+        public System.Threading.Tasks.Task<int> SubscribeAsync(org.tsu.famc.ds.SETI.Scout.Proxy.Target target) {
             return base.Channel.SubscribeAsync(target);
         }
     }

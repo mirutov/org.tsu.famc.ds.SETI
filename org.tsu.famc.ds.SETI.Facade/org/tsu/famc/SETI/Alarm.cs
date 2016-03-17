@@ -8,26 +8,28 @@ namespace org.tsu.famc.ds.SETI
     public class Alarm : IAlarm
     {
         IAlarmCallback callback = null;
-        IContextChannel channel = null;
-        string sessionId;
-        void Ring(int[] data)
+        int key;
+        public void Ring(int[] data)
         {
-            if (channel.State == CommunicationState.Opened)
+            try
             {
+                Console.WriteLine("send");
                 callback.Alarm(data);
+                Console.WriteLine("ok");
             }
-            else
+            catch (Exception e)
             {
-                SETIProxy.GetSETI().DeleteSubscriber(GetHashCode());
+                Console.WriteLine("Alarm.Ring Cannot send a signal to " + key);
+                Console.WriteLine(e.Message);
+                SETIProxy.GetSETI().DeleteSubscriber(key);
             }
         }
 
-        public void Subscribe(Target target)
+        public int Subscribe(Target target)
         {
             callback = OperationContext.Current.GetCallbackChannel<IAlarmCallback>();
-            channel = OperationContext.Current.Channel;
-            sessionId = channel.SessionId;
-            SETIProxy.GetSETI().AddSubscriber(GetHashCode(), Ring, target);
+            key = SETIProxy.GetSETI().AddSubscriber(Ring, target);
+            return key;
         }
     }
 }

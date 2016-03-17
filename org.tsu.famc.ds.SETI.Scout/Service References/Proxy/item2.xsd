@@ -9,11 +9,23 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="SubscribeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubscribeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Alarm">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="data" nillable="true" type="q2:ArrayOfint" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlarmResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

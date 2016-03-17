@@ -11,17 +11,18 @@ namespace org.tsu.famc.ds.SETI
     public class SpaceScout : IAlarmCallback
     {
         Target target;
+        int key;
 
         public SpaceScout(Target argTarget)
         {
             target = argTarget;
             AlarmClient ac = new AlarmClient(new InstanceContext(this));
-            ac.Subscribe(target);
+            key = ac.Subscribe(target);
         }
 
         public void Alarm(int[] data)
         {
-            Console.Write("SpaceScout-" + target +".Alarm- ");
+            Console.Write("SpaceScout-" + target +".Alarm (key=" + key + ")");
             foreach (int i in data)
             {
                 Console.Write(" " + i);
