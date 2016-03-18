@@ -11,18 +11,18 @@ namespace org.tsu.famc.ds.SETI
         int key;
         public void Ring(int[] data)
         {
-            try
+            Task.Run(() =>
             {
-                Console.WriteLine("send");
-                callback.Alarm(data);
-                Console.WriteLine("ok");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Alarm.Ring Cannot send a signal to " + key);
-                Console.WriteLine(e.Message);
-                SETIProxy.GetSETI().DeleteSubscriber(key);
-            }
+                try
+                {
+                    callback.Alarm(data);
+                }
+                catch (Exception e)
+                {
+                    //Console.WriteLine(e.Message);
+                    SETIProxy.GetSETI().DeleteSubscriber(key);
+                }
+            });
         }
 
         public int Subscribe(Target target)

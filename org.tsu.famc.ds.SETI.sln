@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "org.tsu.famc.ds.SETI", "org.tsu.famc.ds.SETI\org.tsu.famc.ds.SETI.csproj", "{E7336C62-05B2-4AA6-BFED-1EB77C1EEFE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "org.tsu.famc.ds.SETI.Receiver", "org.tsu.famc.ds.SETI.Receiver\org.tsu.famc.ds.SETI.Receiver.csproj", "{5B7D00AD-9D2E-45FF-9DB5-BB99C42CD17A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "org.tsu.famc.ds.SETI.Alarm", "org.tsu.famc.ds.SETI.Alarm\org.tsu.famc.ds.SETI.Alarm.csproj", "{3DCCBF2C-C620-49B9-A2DE-ECC511D2790B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "org.tsu.famc.ds.SETI.Target", "org.tsu.famc.ds.SETI.Target\org.tsu.famc.ds.SETI.Target.csproj", "{F19542A8-19CA-410C-9607-97EEDB7B5240}"
@@ -21,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "org.tsu.famc.ds.SETI.Telesc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "org.tsu.famc.ds.SETI.Scout", "org.tsu.famc.ds.SETI.Scout\org.tsu.famc.ds.SETI.Scout.csproj", "{FA554EB1-CE74-4E51-90E6-1B4BE49E1E6F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "org.tsu.famc.ds.SETI.Receiver", "org.tsu.famc.ds.SETI.Receiver\org.tsu.famc.ds.SETI.Receiver.csproj", "{5B7D00AD-9D2E-45FF-9DB5-BB99C42CD17A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,10 +31,6 @@ Global
 		{E7336C62-05B2-4AA6-BFED-1EB77C1EEFE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7336C62-05B2-4AA6-BFED-1EB77C1EEFE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7336C62-05B2-4AA6-BFED-1EB77C1EEFE5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5B7D00AD-9D2E-45FF-9DB5-BB99C42CD17A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5B7D00AD-9D2E-45FF-9DB5-BB99C42CD17A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5B7D00AD-9D2E-45FF-9DB5-BB99C42CD17A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5B7D00AD-9D2E-45FF-9DB5-BB99C42CD17A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3DCCBF2C-C620-49B9-A2DE-ECC511D2790B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3DCCBF2C-C620-49B9-A2DE-ECC511D2790B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DCCBF2C-C620-49B9-A2DE-ECC511D2790B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,6 +59,10 @@ Global
 		{FA554EB1-CE74-4E51-90E6-1B4BE49E1E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA554EB1-CE74-4E51-90E6-1B4BE49E1E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA554EB1-CE74-4E51-90E6-1B4BE49E1E6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B7D00AD-9D2E-45FF-9DB5-BB99C42CD17A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B7D00AD-9D2E-45FF-9DB5-BB99C42CD17A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B7D00AD-9D2E-45FF-9DB5-BB99C42CD17A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B7D00AD-9D2E-45FF-9DB5-BB99C42CD17A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

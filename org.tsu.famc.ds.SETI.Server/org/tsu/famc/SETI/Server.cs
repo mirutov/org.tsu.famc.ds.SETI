@@ -38,7 +38,10 @@ namespace org.tsu.famc.ds.SETI
             {
                 // Связываем сервис с endpoint'ом
                 receiverHost.AddServiceEndpoint(typeof(IReceiver), new WSHttpBinding(), "Reciever");
-                alarmHost.AddServiceEndpoint(typeof(IAlarm), new WSDualHttpBinding(), "Alarm");
+
+                WSDualHttpBinding binding = new WSDualHttpBinding();
+                binding.SendTimeout = new TimeSpan(0, 0, 5);
+                alarmHost.AddServiceEndpoint(typeof(IAlarm), binding, "Alarm");
 
                 // Разрешаем считывать метаданные сервиса
                 ServiceMetadataBehavior smb = new ServiceMetadataBehavior();

@@ -9,8 +9,8 @@ namespace org.tsu.famc.ds.SETI
         static void Main(string[] args)
         {
             int[] data1 = new int[3] { 1, 1, 1 };
-            int[] data2 = new int[3] { 1, 1, 1 };
-            int[] data3 = new int[3] { 1, 1, 1 };
+            int[] data2 = new int[3] { 2, 2, 2 };
+            int[] data3 = new int[3] { 3, 3, 3 };
 
             ReceiverClient rc = new ReceiverClient();
             try {                

@@ -27,7 +27,7 @@ namespace org.tsu.famc.ds.SETI
         public async void Receive(int[] data)
         {
             Console.WriteLine("Receiver.Receive: " + ++count);           
-            await AnalyzeData(data);
+            AnalyzeData(data);
         }
     }
 }
