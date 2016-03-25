@@ -21,6 +21,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "org.tsu.famc.ds.SETI.Scout"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "org.tsu.famc.ds.SETI.Receiver", "org.tsu.famc.ds.SETI.Receiver\org.tsu.famc.ds.SETI.Receiver.csproj", "{5B7D00AD-9D2E-45FF-9DB5-BB99C42CD17A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "org.tsu.famc.ds.SETI.RESTServer", "org.tsu.famc.ds.SETI.RESTServer\org.tsu.famc.ds.SETI.RESTServer.csproj", "{C2691211-AD40-4AA0-9342-68C5F7630516}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "org.tsu.famc.ds.SETI.Proxy", "org.tsu.famc.ds.SETI.Proxy\org.tsu.famc.ds.SETI.Proxy.csproj", "{342C7A21-93CA-461B-9393-2F80DAA80ADA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "html", "html", "{4AAEA696-7C73-4E89-97A9-D238795687AB}"
+	ProjectSection(SolutionItems) = preProject
+		WEBTelescope.html = WEBTelescope.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +72,14 @@ Global
 		{5B7D00AD-9D2E-45FF-9DB5-BB99C42CD17A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B7D00AD-9D2E-45FF-9DB5-BB99C42CD17A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B7D00AD-9D2E-45FF-9DB5-BB99C42CD17A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2691211-AD40-4AA0-9342-68C5F7630516}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2691211-AD40-4AA0-9342-68C5F7630516}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2691211-AD40-4AA0-9342-68C5F7630516}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2691211-AD40-4AA0-9342-68C5F7630516}.Release|Any CPU.Build.0 = Release|Any CPU
+		{342C7A21-93CA-461B-9393-2F80DAA80ADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{342C7A21-93CA-461B-9393-2F80DAA80ADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{342C7A21-93CA-461B-9393-2F80DAA80ADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{342C7A21-93CA-461B-9393-2F80DAA80ADA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -29,6 +29,7 @@ namespace org.tsu.famc.ds.SETI
             // Опрелеяем URI сервисов
             Uri receiverUri = new Uri("http://localhost:8000/Reciever/");
             Uri alarmUri = new Uri("http://localhost:8001/Alarm/");
+            string restURL = "http://localhost:8002/";
 
             // Создаем сервисs
             ServiceHost receiverHost = new ServiceHost(typeof(Receiver), receiverUri);
@@ -50,11 +51,15 @@ namespace org.tsu.famc.ds.SETI
 
                 smb = new ServiceMetadataBehavior();
                 smb.HttpGetEnabled = true;
-                alarmHost.Description.Behaviors.Add(smb);
+                alarmHost.Description.Behaviors.Add(smb);                
 
-                // Стартуем сервис
+                // Стартуем сервис WCF
                 receiverHost.Open();
                 Console.WriteLine("The Reciever is ready.");
+                // Стартуем сервис Rest
+                RESTReciver.RunRESTReciverControler(restURL);
+                Console.WriteLine("The RESTReciever is ready.");
+                // Стартуем сервис WCF-Alarm
                 alarmHost.Open();
                 Console.WriteLine("The Alarm is ready.");
                 Console.WriteLine("Press <ENTER> to terminate service.");
@@ -65,7 +70,7 @@ namespace org.tsu.famc.ds.SETI
                 receiverHost.Close();
                 alarmHost.Close();
             }
-            catch (CommunicationException ce)
+            catch (Exception ce)
             {
                 Console.WriteLine("An exception occurred: {0}", ce.Message);
                 receiverHost.Abort();

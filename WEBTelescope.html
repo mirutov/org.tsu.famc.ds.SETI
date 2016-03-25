@@ -1,0 +1,29 @@
+﻿<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+<script type="text/javascript">
+
+
+function SendPost() {
+	var arg = "{'data':["
+	arg = arg + $('#array').val();
+	arg = arg + "]}",
+	$.ajax({
+		type: "POST",
+		dataType: "json",
+		url: "http://localhost:8002/api/RESTReciver/Receive",
+		contentType: "application/json; charset=utf-8",
+		data: arg,
+		success:function(arg){
+			$("#result").text(arg.data);
+        }
+	})
+}
+
+
+</script>
+
+<div id="result">Тут будет ответ от сервера</div><br /><br />
+
+<div onclick="SendPost();">POST</div><br />
+
+<input type="text" id="array" size="40">

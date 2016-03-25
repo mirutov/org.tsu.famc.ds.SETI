@@ -5,7 +5,7 @@ namespace org.tsu.famc.ds.SETI
     public interface ISETI
     {
         void AnalyzeData(int[] data);
-        int AddSubscriber(Notify obserer, Target target);
+        int AddSubscriber(Notify observer, Target target);
         void DeleteSubscriber(int key);
     }
 }

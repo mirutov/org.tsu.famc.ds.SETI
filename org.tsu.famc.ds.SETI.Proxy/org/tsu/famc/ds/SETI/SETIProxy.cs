@@ -1,14 +1,13 @@
 ﻿using Ninject;
 using System;
-using System.IO;
 
 namespace org.tsu.famc.ds.SETI
 {
-    internal class SETIProxy
+    public class SETIProxy
     {
         private static object locker = new object();
         private static ISETI seti = null;
-        internal static ISETI GetSETI()
+        public static ISETI GetSETI()
         {
             lock (locker)
             {
